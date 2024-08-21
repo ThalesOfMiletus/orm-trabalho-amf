@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { CreateUsersTable1705752946855 } from './migrations/1723596907187-CreateUsersTable';
+import User from "../app/entities/Users";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -11,7 +12,7 @@ export const AppDataSource = new DataSource({
   database: "projeto_typeorm",
   synchronize: true,
   logging: false,
-  entities: [],
+  entities: [User],
   migrations: [CreateUsersTable1705752946855],
   subscribers: [],
 });
